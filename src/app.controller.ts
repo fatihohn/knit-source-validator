@@ -1,12 +1,14 @@
-import { Controller, Get } from '@nestjs/common';
-import { AppService } from './app.service';
+// src/app.controller.ts
+import { Controller, Post, Body } from '@nestjs/common';
+import { ValidatorService } from './validator/validator.service';
 
 @Controller()
 export class AppController {
-  constructor(private readonly appService: AppService) {}
+  constructor(private readonly validatorService: ValidatorService) {}
 
-  @Get()
-  getHello(): string {
-    return this.appService.getHello();
+  @Post('add-job')
+  async addJob(@Body() data: any) {
+    await this.validatorService.addJob(data);
+    return 'Job added to queue';
   }
 }
