@@ -2,7 +2,7 @@
   "name": "knit-source-validator",
   "version": "0.0.1",
   "description": "",
-  "author": "",
+  "author": "Donghun Ohn",
   "private": true,
   "license": "UNLICENSED",
   "scripts": {
